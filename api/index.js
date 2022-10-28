@@ -7,6 +7,8 @@ import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+// import path from 'path'
+// import { fileURLToPath } from 'url';
 
 const app = express();
 dotenv.config();
@@ -44,6 +46,16 @@ app.use((err, req, res, next) => {
     stack: err.stack,
   });
 });
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+// app.use(express.static(path.join(__dirname, '../client/build'))) 
+  
+//  app.get('/client', (req, res) => { 
+//    res.sendFile(path.resolve(__dirname, '../client/build/index.html')) 
+//  })
+
 
 app.listen(8800, () => {
   connect();
